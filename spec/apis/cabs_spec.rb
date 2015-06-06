@@ -4,7 +4,7 @@ describe "Cabs endpoint", type: :controller do
   include Rack::Test::Methods
 
   let(:cab) { create :cab }
-  let(:sample_position) { ["55.0", "45.0"] }
+  let(:sample_position) { [55.0, 45.0] }
 
   it "returs 204 in case of valid request" do
     put "/api/v1/cabs/#{ cab.id }"

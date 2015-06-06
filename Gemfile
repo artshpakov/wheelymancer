@@ -4,6 +4,7 @@ gem 'grape'
 gem 'thin'
 gem 'rake'
 gem 'mongoid'
+gem 'haversine'
 
 group :development do
   gem 'shotgun'

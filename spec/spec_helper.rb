@@ -29,3 +29,7 @@ RSpec.configure do |config|
     end
   end
 end
+
+def json_response
+  JSON.parse last_response.body if last_response
+end

@@ -9,3 +9,5 @@
 end
 
 Cab.last.update_attributes available: false
+
+Cab.create_indexes
