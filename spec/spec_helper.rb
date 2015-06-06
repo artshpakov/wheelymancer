@@ -21,6 +21,7 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
+    CacheManager.flushdb
   end
 
   config.around(:each) do |example|

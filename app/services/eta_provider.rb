@@ -12,7 +12,23 @@ class EtaProvider
   end
 
   def calculate_for position
-    Haversine.distance(position, @position).to_meters * 1.5
+    car_area      = truncate position
+    customer_area = truncate @position
+
+    CacheManager.fetch [car_area, customer_area].flatten.to_s do
+      haversine_distance car_area, customer_area
+    end
+  end
+
+
+  protected
+
+  def truncate position
+    position.map {|coord| ('%.3f' % coord).to_f} # empirically derived
+  end
+
+  def haversine_distance car_area, customer_area
+    Haversine.distance(car_area, customer_area).to_meters * 1.5
   end
 
 end
