@@ -1,0 +1,13 @@
+development:
+  sessions:
+    default:
+      database: wheely
+      hosts:
+        - localhost:27017
+
+test:
+  sessions:
+    default:
+      database: wheely_test
+      hosts:
+        - localhost:27017
